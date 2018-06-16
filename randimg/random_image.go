@@ -83,12 +83,14 @@ func main() {
 	case 3:
 		n, err := strconv.Atoi(os.Args[1])
 		if err != nil {
-			panic(fmt.Errorf("Expected integer as positional argument; got '%s'", os.Args[2]))
+			panic(fmt.Errorf("Expected integer as positional argument; got '%s'", os.Args[1]))
 		}
 		num = int64(n)
-		filepath = os.Args[2]
+		if len(os.Args) > 2 {
+			filepath = os.Args[2]
+		}
 	default:
-		panic(fmt.Errorf("Unknown arguments; ./randimg <integer> <output.png>"))
+		panic(fmt.Errorf("usage: ./randimg <integer> <output.png>"))
 	}
 
 	if err := Draw(filepath, num); err != nil {
