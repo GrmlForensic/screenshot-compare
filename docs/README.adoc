@@ -1,0 +1,5 @@
+docs
+====
+
+The project is documented in the link:../README.adoc[project's README file].
+This folder stores documentation related files.
