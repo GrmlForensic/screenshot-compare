@@ -11,6 +11,8 @@ author::
   grml solutions
 version::
   1.0.2
+gonamespace::
+  gopkg.in/meisterluk/screenshot-compare.v1
 
 What is it about?
 -----------------
@@ -41,7 +43,7 @@ How to install
 You can run `go get`:
 
 [source,bash]
-go get github.com/meisterluk/screenshot-compare
+go get gopkg.in/meisterluk/screenshot-compare.v1
 
 and start developing! 😊
 
