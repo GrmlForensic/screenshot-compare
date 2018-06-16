@@ -19,6 +19,8 @@ You can compare two image files and it will show a difference score between 0 an
 Using transparent reference PNG images, you can also skip certain areas of the file.
 Unlike the title, you can compare arbitrary images, but our usecase is screenshot comparison.
 
+You can either get the binary executable or use this implementation as a go dependency.
+
 Why should I use it?
 --------------------
 
@@ -28,9 +30,10 @@ Who should use it?
 ------------------
 
 Especially software developers testing software might find this software useful.
-Consider that Mozilla Firefox's just got a link:https://developer.mozilla.org/en-US/Firefox/Headless_mode[headless mode] and soon you will be able to take screenshots.
-Chromium link:https://github.com/GoogleChrome/puppeteer[has it already]. So web developer might find it useful as well.
-We use it with link:https://www.virtualbox.org/wiki/Downloads[VirtualBox].
+Consider that modern browsers feature headless modes (e.g. link:https://developer.mozilla.org/en-US/Firefox/Headless_mode[Mozilla Firefox], link:https://developers.google.com/web/updates/2017/04/headless-chrome[Google Chrome]).
+With this feature it will be easy to take screenshots of websites and this project enables you to compare them.
+Thus, web developers might find it useful as well.
+We use it in combination with virtualization software.
 
 How to install
 --------------
