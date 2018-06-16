@@ -47,12 +47,12 @@ How to run
 
 1. Go to https://github.com/meisterluk/screenshot-compare
 2. Click on the Releases link
-   image:run_1.png[github releases]
+   image:docs/run_1.png[github releases]
 3. Scroll down, choose the download appropriate for your platform
-   image:run_2.png[Downloads]
+   image:docs/run_2.png[Downloads]
 4. Once the download has finished, extract the files of the tar-gz archive
 5. Run the file screenshot-compare on the Terminal (cmd.exe for Windows users)
-   image:run_2.png[Terminal]
+   image:docs/run_2.png[Terminal]
 
 One terminal example is the comparison of link:tests/grml_booting_totalmemory_kB.png[`grml_booting_totalmemory_kB.png`] and link:tests/grml_booting_totalmemory_MB.png[`grml_booting_totalmemory_MB.png`]:
 
@@ -76,19 +76,19 @@ Understanding the score
 
 White and black provides the hugest difference (though 100% is not limited to black/white):
 
-image:example_1.png[score 100% for white/black and score 59.7% for black/blue]
+image:docs/example_1.png[score 100% for white/black and score 59.7% for black/blue]
 
 These `randimg` images use similar colors, but the structures are slightly (left) or vastly (right) translated.
 
-image:example_2.png[score 37.25% for two similar images where structures are slightly translated and score 43.97% for similar structures but vastly translated]
+image:docs/example_2.png[score 37.25% for two similar images where structures are slightly translated and score 43.97% for similar structures but vastly translated]
 
 If you use the `Y'UV` color space, the score slightly changes (RGB provided 59.7% for black/blue):
 
-image:example_3.png[Y'UV score 100% for white/black and Y'UV score 30.51% for black/blue]
+image:docs/example_3.png[Y'UV score 100% for white/black and Y'UV score 30.51% for black/blue]
 
 This image illustrates the transparency feature:
 
-image:example_4.png[difference 0% illustrating that areas with transparency in the reference areas are skipped]
+image:docs/example_4.png[difference 0% illustrating that areas with transparency in the reference areas are skipped]
 
 `PNG` and `JPEG` file formats can be processed.
 If you want a binary classifier whether the images are similar,
