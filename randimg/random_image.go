@@ -76,14 +76,14 @@ func main() {
 	switch len(os.Args) {
 	case 1:
 		num = time.Now().Unix()
-		fmt.Printf("Using current time as random seed: %d\n", num)
+		fmt.Printf("using current time as random seed: %d\n", num)
 	case 2:
 		filepath = "randimg.png"
 		fallthrough
 	case 3:
 		n, err := strconv.Atoi(os.Args[1])
 		if err != nil {
-			panic(fmt.Errorf("Expected integer as positional argument; got '%s'", os.Args[1]))
+			panic(fmt.Errorf("expected integer as positional argument; got '%s'", os.Args[1]))
 		}
 		num = int64(n)
 		if len(os.Args) > 2 {
