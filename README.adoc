@@ -12,7 +12,7 @@ author::
 version::
   1.0.2
 gonamespace::
-  gopkg.in/meisterluk/screenshot-compare.v1
+  github.com/meisterluk/screenshot-compare
 
 What is it about?
 -----------------
@@ -43,7 +43,7 @@ How to install
 You can run `go get`:
 
 [source,bash]
-go get gopkg.in/meisterluk/screenshot-compare.v1
+go get github.com/meisterluk/screenshot-compare
 
 and start developing! 😊
 
