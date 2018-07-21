@@ -77,20 +77,24 @@ func main() {
 	case 1:
 		num = time.Now().Unix()
 		fmt.Printf("using current time as random seed: %d\n", num)
+		fallthrough
 	case 2:
 		filepath = "randimg.png"
-		fallthrough
 	case 3:
-		n, err := strconv.Atoi(os.Args[1])
-		if err != nil {
-			panic(fmt.Errorf("expected integer as positional argument; got '%s'", os.Args[1]))
-		}
-		num = int64(n)
-		if len(os.Args) > 2 {
-			filepath = os.Args[2]
-		}
+
 	default:
-		panic(fmt.Errorf("usage: ./randimg <integer> <output.png>"))
+		panic(fmt.Errorf("usage: ./randimg <uint:seed> <str:output.png>"))
+	}
+
+	if len(os.Args) > 2 {
+		i, err := strconv.ParseInt(os.Args[1], 10, 64)
+		if err != nil {
+			panic(err)
+		}
+		num = i
+	}
+	if len(os.Args) > 3 {
+		filepath = os.Args[2]
 	}
 
 	if err := Draw(filepath, num); err != nil {

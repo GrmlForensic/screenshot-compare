@@ -10,9 +10,11 @@ link:https://goreportcard.com/report/github.com/meisterluk/screenshot-compare[im
 author::
   grml solutions
 version::
-  1.0.2
-gonamespace::
-  github.com/meisterluk/screenshot-compare
+  1.1.0
+gonamespace (API)::
+  scmp "github.com/meisterluk/screenshot-compare/v1"
+gonamespace (CLI)::
+  github.com/meisterluk/screenshot-compare/cli
 
 What is it about?
 -----------------
@@ -45,7 +47,10 @@ You can run `go get`:
 [source,bash]
 go get github.com/meisterluk/screenshot-compare
 
-and start developing! 😊
+and start developing! 😊 You can build the executable using:
+
+[source,base]
+go build github.com/meisterluk/screenshot-compare/cli
 
 How to run
 ----------
@@ -56,20 +61,64 @@ How to run
 3. Scroll down, choose the download appropriate for your platform
    image:docs/run_2.png[Downloads]
 4. Once the download has finished, extract the files of the tar-gz archive
-5. Run the file screenshot-compare on the Terminal (cmd.exe for Windows users)
+5. Run the file screenshot-compare on the Terminal (cmd.exe or PowerShell for Windows users)
    image:docs/run_2.png[Terminal]
 
 One terminal example is the comparison of link:tests/grml_booting_totalmemory_kB.png[`grml_booting_totalmemory_kB.png`] and link:tests/grml_booting_totalmemory_MB.png[`grml_booting_totalmemory_MB.png`]:
 
 [code,bash]
 ----
-$ ./screenshot-compare grml_booting_totalmemory_kB.png grml_booting_totalmemory_MB.png
+$ ./screenshot-compare tests/grml_booting_totalmemory_kB.png tests/grml_booting_totalmemory_MB.png 
+runtime:                372.624129ms
+timeout:                false
+pixels different:       168
 difference percentage:  0.017 %
-runtime:                79.263022ms
 ----
 
 The exit code also shows the difference percentage.
 Run `screenshot-compare` without arguments to see the usage description for this.
+
+How to call
+-----------
+
+You can call the main routine `Compare` programmatically. Either you look into the `cli/` or `tests/` directories for examples or take a look at this example:
+
+[source,go]
+----
+package main
+
+import (
+    "fmt"
+
+    scmp "github.com/meisterluk/screenshot-compare/v1"
+)
+
+func main() {
+    config := scmp.NewConfig()
+    result := scmp.Result{}
+
+    // prepare images for comparison
+    err := config.BaseImg.FromFilepath("image1.png")
+    if err != nil {
+        panic(err)
+    }
+    err = config.RefImg.FromFilepath("image2.png")
+    if err != nil {
+        panic(err)
+    }
+
+    // run comparison
+    err = scmp.Compare(config, &result)
+    if err != nil {
+        panic(err)
+    }
+
+    // show score
+    fmt.Println(result.Score)
+}
+----
+
+As you can see, I bound the `v1` API import to the alias `scmp` which is best practice.
 
 Understanding the score
 -----------------------
@@ -102,7 +151,7 @@ If you want a binary classifier whether the images are similar,
 Source Code
 -----------
 
-The source code is available at link:https://github.com/meisterluk/screenshot-compare/issues[Github].
+The source code is available at link:https://github.com/meisterluk/screenshot-compare[Github].
 
 License
 -------
@@ -122,6 +171,12 @@ Changelog
   improved README with illustrations
 1.0.2::
   introduce README section "How to run"
+1.1.0::
+  complete rewrite of the core with same functionality +
+  allows to retrieve config from env vars, JSON file and CLI args +
+  result shows the number of pixels with differences +
+  public API / implementation as a library +
+  source code was moved into v1 module to allow usage in a backwards-compatible way
 
 Issues
 ------
