@@ -8,9 +8,10 @@ import (
 )
 
 // USAGE for CLI
-const USAGE = `FLAGS
+const USAGE = `PARAMETERS
 
-  [--colors <colorspace> | --timeout <duration> | --wait <duration>] <base> <ref>
+  [--colors <colorspace> | --timeout <duration> | --wait <duration>
+  | --diffpixel <count> | --nodimerror] <base> <ref>
 
 DESCRIPTION
 
@@ -37,6 +38,14 @@ OPTIONS
 
   --wait <duration> with default value "0s"
     Defines how long the program should wait before starting comparison
+
+  --diffpixel <count> with default value "0"
+    An integer specifying how many pixels with any differences shall
+    be ignored in the score
+
+  --nodimerror with default value false
+    if true and dimensions of the images do not match, returns difference
+    set to maximum. if false, return error with exit code 101.
 
   <base> is a required positional argument
     is a filepath to the base image (alpha channel is ignored)
