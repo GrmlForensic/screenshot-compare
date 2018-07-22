@@ -168,7 +168,7 @@ func (c *Config) FromArgs(args []string, usage string, mode int) (error, error) 
 	baseImg := cli.Arg("baseimg", `filepath to image to compare`).Required().String()
 	refImg := cli.Arg("refimg", `filepath to image to compare with`).Required().String()
 
-	cli.Version("1.1.0")
+	cli.Version("1.2.0")
 	cli.Terminate(terminate)
 	_, err2 := cli.Parse(args[1:])
 	if err2 != nil {

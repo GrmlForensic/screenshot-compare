@@ -10,7 +10,7 @@ link:https://goreportcard.com/report/github.com/GrmlForensic/screenshot-compare[
 author::
   grml solutions
 version::
-  1.1.0
+  1.2.0
 gonamespace (API)::
   scmp "github.com/GrmlForensic/screenshot-compare/v1"
 gonamespace (CLI)::
@@ -177,6 +177,9 @@ Changelog
   result shows the number of pixels with differences +
   public API / implementation as a library +
   source code was moved into v1 module to allow usage in a backwards-compatible way
+1.2.0::
+  switch from meisterluk to GrmlForensic namespace +
+  add goreleaser configuration file
 
 Issues
 ------
