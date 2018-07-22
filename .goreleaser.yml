@@ -1,0 +1,25 @@
+# .goreleaser.yml
+# Build customization
+builds:
+  - binary: screenshot-compare
+    main: ./cli/cli.go
+    goos:
+      - windows
+      - darwin
+      - linux
+    goarch:
+      - amd64
+release:
+  github:
+    owner: GrmlForensic
+    name: screenshot-compare
+checksum:
+  name_template: 'checksums.txt'
+archive:
+  format: tar.gz
+  replacements:
+    amd64: 64-bit
+  files:
+    - docs/*
+    - LICENSE
+    - README.adoc
