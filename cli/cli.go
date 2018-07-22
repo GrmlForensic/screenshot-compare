@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	scmp "github.com/meisterluk/screenshot-compare/v1"
+	scmp "github.com/GrmlForensic/screenshot-compare/v1"
 )
 
 // USAGE for CLI

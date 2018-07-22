@@ -1,20 +1,20 @@
 README
 ======
 
-link:https://img.shields.io/github/release/meisterluk/screenshot-compare.svg?style=flat-square[image:https://img.shields.io/github/release/meisterluk/screenshot-compare.svg?style=flat-square[Latest version]]
-link:https://godoc.org/github.com/meisterluk/screenshot-compare[image:https://godoc.org/github.com/meisterluk/screenshot-compare?status.svg[GoDoc]]
+link:https://img.shields.io/github/release/GrmlForensic/screenshot-compare.svg?style=flat-square[image:https://img.shields.io/github/release/GrmlForensic/screenshot-compare.svg?style=flat-square[Latest version]]
+link:https://godoc.org/github.com/GrmlForensic/screenshot-compare[image:https://godoc.org/github.com/GrmlForensic/screenshot-compare?status.svg[GoDoc]]
 link:LICENSE[image:https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square[Used LICENSE]]
-link:https://travis-ci.org/meisterluk/screenshot-compare[image:https://api.travis-ci.org/meisterluk/screenshot-compare.svg?branch=master[travis test result]]
-link:https://goreportcard.com/report/github.com/meisterluk/screenshot-compare[image:https://goreportcard.com/badge/github.com/meisterluk/screenshot-compare[Go Report Card]]
+link:https://travis-ci.org/GrmlForensic/screenshot-compare[image:https://api.travis-ci.org/GrmlForensic/screenshot-compare.svg?branch=master[travis test result]]
+link:https://goreportcard.com/report/github.com/GrmlForensic/screenshot-compare[image:https://goreportcard.com/badge/github.com/GrmlForensic/screenshot-compare[Go Report Card]]
 
 author::
   grml solutions
 version::
   1.1.0
 gonamespace (API)::
-  scmp "github.com/meisterluk/screenshot-compare/v1"
+  scmp "github.com/GrmlForensic/screenshot-compare/v1"
 gonamespace (CLI)::
-  github.com/meisterluk/screenshot-compare/cli
+  github.com/GrmlForensic/screenshot-compare/cli
 
 What is it about?
 -----------------
@@ -45,17 +45,17 @@ How to install
 You can run `go get`:
 
 [source,bash]
-go get github.com/meisterluk/screenshot-compare
+go get github.com/GrmlForensic/screenshot-compare
 
 and start developing! 😊 You can build the executable using:
 
 [source,base]
-go build github.com/meisterluk/screenshot-compare/cli
+go build github.com/GrmlForensic/screenshot-compare/cli
 
 How to run
 ----------
 
-1. Go to https://github.com/meisterluk/screenshot-compare
+1. Go to https://github.com/GrmlForensic/screenshot-compare
 2. Click on the Releases link
    image:docs/run_1.png[github releases]
 3. Scroll down, choose the download appropriate for your platform
@@ -90,7 +90,7 @@ package main
 import (
     "fmt"
 
-    scmp "github.com/meisterluk/screenshot-compare/v1"
+    scmp "github.com/GrmlForensic/screenshot-compare/v1"
 )
 
 func main() {
@@ -151,7 +151,7 @@ If you want a binary classifier whether the images are similar,
 Source Code
 -----------
 
-The source code is available at link:https://github.com/meisterluk/screenshot-compare[Github].
+The source code is available at link:https://github.com/GrmlForensic/screenshot-compare[Github].
 
 License
 -------
@@ -181,4 +181,4 @@ Changelog
 Issues
 ------
 
-Please report any issues on the link:https://github.com/meisterluk/screenshot-compare/issues[Github issues page].
+Please report any issues on the link:https://github.com/GrmlForensic/screenshot-compare/issues[Github issues page].
