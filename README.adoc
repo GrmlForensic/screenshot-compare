@@ -45,12 +45,12 @@ How to install
 You can run `go get`:
 
 [source,bash]
-go get github.com/GrmlForensic/screenshot-compare
+go get github.com/GrmlForensic/screenshot-compare/...
 
 and start developing! 😊 You can build the executable using:
 
 [source,base]
-go build github.com/GrmlForensic/screenshot-compare/cli
+go build -o screenshot-compare github.com/GrmlForensic/screenshot-compare/cli
 
 How to run
 ----------
